@@ -11,16 +11,19 @@
 
 def partition(arr, low, high):
     pivot = arr[high] #last element
-   #i is left than pivot and all numbers after I and up to J are greater than the pivot
+   #J is current element. Every number before J will be divided into two groups:- 
+   #less than pivot and greater than pivot. I will always point to the last-
+   #number less than the pivot (left sub group)
     i = low - 1 #-1 to start with 
     for j in range(low, high):
        
         if arr[j] < pivot:
+            #increment i and swap
             i = i + 1
             temp = arr[i]
             arr[i] = arr[j]
             arr[j] = temp
-            
+    #swap pivot with arr[i+1]     
     temp = arr[i+1]
     arr[i+1] = arr[high]
     arr[high] = temp

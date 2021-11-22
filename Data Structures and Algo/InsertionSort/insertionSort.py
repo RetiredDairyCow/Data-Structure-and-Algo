@@ -5,7 +5,7 @@ def insertionSort(array):
         currentElement = array[i]
         j = i-1
         while j >= 0 and currentElement <= array[j]:
-            array[j+1] = array[j]
+            array[j+1] = array[j] #move the element to the right
             j = j - 1
         array[j+1] = currentElement
 
